@@ -16,9 +16,9 @@
         lng: position.coords.longitude
       };
       console.log(pos);
-      latlng.push(pos)
-  });
-console.log(latlng)
+      
+ 
+
 function myMap() {
   var myCenter = new google.maps.LatLng(40,40);
   var mapCanvas = document.getElementById("map");
@@ -28,6 +28,7 @@ function myMap() {
   marker.setMap(map);
 }
 }
+ });
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF1z4D8_qAlnNA6PDoT8UrYOjhajWyP1Y&callback=myMap"></script>
