@@ -7,6 +7,7 @@
 
 <script type="text/javascript">
  var pos;
+ var latlng = [];
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -14,9 +15,10 @@
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-      console.log(pos)
+      console.log(pos);
+      latlng.push(pos)
   });
-console.log(pos)
+console.log(latlng)
 function myMap() {
   var myCenter = new google.maps.LatLng(40,40);
   var mapCanvas = document.getElementById("map");
