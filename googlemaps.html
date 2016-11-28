@@ -20,24 +20,25 @@
       latLng.push(latParse);
       latLng.push(lngParse);
       
-  });
+ 
 
     console.log(latLng);
       console.log(userLng);
       
 
-function myMap() {
+
   var myCenter = new google.maps.LatLng(userLat,userLng);
   var mapCanvas = document.getElementById("map");
   var mapOptions = {center: myCenter, zoom: 5};
   var map = new google.maps.Map(mapCanvas, mapOptions);
   var marker = new google.maps.Marker({position:myCenter});
   marker.setMap(map);
-}
-}
+
+});
+ }
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF1z4D8_qAlnNA6PDoT8UrYOjhajWyP1Y&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF1z4D8_qAlnNA6PDoT8UrYOjhajWyP1Y"></script>
 
 </body>
 </html>
