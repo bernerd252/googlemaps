@@ -6,8 +6,7 @@
 <div id="map" style="width:100%;height:500px"></div>
 
 <script type="text/javascript">
- var userLat = 0;
- var userLng = 0;
+
  var latLng = [];
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
@@ -15,18 +14,9 @@
        
        var lat = position.coords.latitude;
        var lng = position.coords.longitude;
-       var latParse = parseFloat(lat);
-       var lngParse = parseFloat(lng);
-      latLng.push(latParse);
-      latLng.push(lngParse);
+       var userLat = parseFloat(lat);
+       var userLng = parseFloat(lng);
       
- 
-
-    console.log(latLng);
-      console.log(userLng);
-      
-
-
   var myCenter = new google.maps.LatLng(userLat,userLng);
   var mapCanvas = document.getElementById("map");
   var mapOptions = {center: myCenter, zoom: 5};
