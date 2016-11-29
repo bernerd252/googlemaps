@@ -22,8 +22,23 @@
           {title: 'East Village Hip Studio', location: {lat: 40.7281777, lng: -73.984377}},
           {title: 'TriBeCa Artsy Bachelor Pad', location: {lat: 40.7195264, lng: -74.0089934}},
           {title: 'Chinatown Homey Space', location: {lat: 40.7180628, lng: -73.9961237}}];
+
+           var largeInfowindow = new google.maps.InfoWindow();
+        // Style the markers a bit. This will be our listing marker icon.
+        var defaultIcon = ("https://raw.githubusercontent.com/bernerd252/secretbeer/master/images/beerBottle.gif")
+        // Create a "highlighted location" marker color for when the user
+        // mouses over the marker.
+        var highlightedIcon = ("https://raw.githubusercontent.com/bernerd252/secretbeer/master/images/beerBottleHover.png")
+        var largeInfowindow = new google.maps.InfoWindow();
+        // The following group uses the location array to create an array of markers on initialize.
+        for (var i = 0; i < lats.length; i++) {
+          // Get the position from the location array. And turn them into something the computer can use.
+          var latParse = parseFloat(lats[i])
+          // console.log("latParse " + latParse)
+          var lngParse = parseFloat(lngs[i])
+          // console.log("lngParse " + lngParse)
       
-  var myCenter = new google.maps.LatLng(userLat,userLng);
+  var myCenter = new google.maps.LatLng(40,40);
   var mapCanvas = document.getElementById("map");
   var mapOptions = {center: myCenter, zoom: 5};
   var map = new google.maps.Map(mapCanvas, mapOptions);
@@ -40,8 +55,9 @@
   //   }
 
 
-});
- }
+}
+ });
+  }
 
 
 </script>
