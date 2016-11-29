@@ -38,7 +38,33 @@
           var latParse = parseFloat(lats[i])
           // console.log("latParse " + latParse)
           var lngParse = parseFloat(lngs[i])
+
           // console.log("lngParse " + lngParse)
+
+           // change latParse and lngParse into latitude and longitude cocordinates that google maps can understand
+         var position = new google.maps.LatLng(latParse,lngParse);
+          
+          // Create a marker per location, and put into markers array.
+          var marker = new google.maps.Marker({
+            position: position,
+            title: title,
+            animation: google.maps.Animation.DROP,
+            icon: defaultIcon,
+             });
+          // Push the marker to our array of markers.
+          markers.push(marker);
+          // Create an onclick event to open the large infowindow at each marker.
+          marker.addListener('click', function() {
+            populateInfoWindow(this, largeInfowindow);
+          });
+          // Two event listeners - one for mouseover, one for mouseout,
+          // to change the colors back and forth.
+          marker.addListener('mouseover', function() {
+            this.setIcon(highlightedIcon);
+          });
+          marker.addListener('mouseout', function() {
+            this.setIcon(defaultIcon);
+          });
       
   var myCenter = new google.maps.LatLng(40,40);
   var mapCanvas = document.getElementById("map");
