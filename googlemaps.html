@@ -66,7 +66,7 @@ var markers = [];
             this.setIcon(defaultIcon);
           });
       
-  var myCenter = new google.maps.LatLng(40,40);
+  var myCenter = new google.maps.LatLng(userLat,userLng);
   var mapCanvas = document.getElementById("map");
   var mapOptions = {center: myCenter, zoom: 5};
   var map = new google.maps.Map(mapCanvas, mapOptions);
